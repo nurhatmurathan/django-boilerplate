@@ -50,7 +50,7 @@ jobs:
         gcloud run deploy django-boilerplate \
           --image=docker.io/nurhatmurathan/boilerplate:${{ github.sha }} \
           --region=us-central1 \
-          --allow-unauthenticated \
+          --no-allow-unauthenticated \
           --port=8000 \
           --min-instances=1 \
           --max-instances=2
