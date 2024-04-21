@@ -2,7 +2,7 @@ FROM python:3.11-alpine
 
 WORKDIR /app
 
-#ENV PROD=True
+ENV PROD=True
 #ENV DEBUG=False
 
 COPY requirements.txt .
