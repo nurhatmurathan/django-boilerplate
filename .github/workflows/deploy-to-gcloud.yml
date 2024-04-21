@@ -37,7 +37,7 @@ jobs:
         tags: nurhatmurathan/boilerplate:${{ github.sha }}
 
     - name: Setup GCloud CLI
-      uses: google-github-actions/setup-gcloud@v0
+      uses: google-github-actions/setup-gcloud@v1
       with:
         service_account_key: ${{ secrets.GCP_SA_KEY }}
         project_id: muratkan-trial-v2
@@ -49,9 +49,7 @@ jobs:
       run: |
         gcloud run deploy django-boilerplate \
           --image=docker.io/nurhatmurathan/boilerplate:${{ github.sha }} \
-          --region=us-central1 \
-          --platform=managed \
-          --port=8000 \
           --allow-unauthenticated \
+          --port=8000 \
           --min-instances=1 \
           --max-instances=2
