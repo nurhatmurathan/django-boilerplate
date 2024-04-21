@@ -17,7 +17,7 @@ from dotenv import load_dotenv
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 if not os.getenv("PROD"):
-    load_dotenv('.env.example')
+    load_dotenv('.env')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
@@ -148,3 +148,6 @@ CORS_ORIGIN_ALLOW_ALL = True
 # CORS_ORIGIN_WHITELIST = (
 #   'http://localhost:8000',
 # )
+
+CSRF_TRUSTED_ORIGINS = ['https://django-boilerplate-nuup2b7eiq-uc.a.run.app', 'https://*.app'
+                        "http://localhost:8000", "http://*.127.0.0.1", "http://127.0.0.1:8000"]
