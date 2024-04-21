@@ -34,7 +34,7 @@ jobs:
         context: .
         file: ./Dockerfile
         push: true
-        tags: nurhatmurathan/boilerplate:${{ steps.meta.outputs.tags }}
+        tags: nurhatmurathan/boilerplate:${{ steps.meta.outputs.short_sha }}
 
     - name: Setup GCloud CLI
       uses: google-github-actions/setup-gcloud@v0
@@ -48,7 +48,7 @@ jobs:
     - name: Deploy to Google Cloud Run
       run: |
         gcloud run deploy django-boilerplate \
-          --image=docker.io/nurhatmurathan/boilerplate:${{ steps.meta.outputs.tags }} \
+          --image=docker.io/nurhatmurathan/boilerplate:${{ steps.meta.outputs.short_sha }} \
           --region=us-central1 \
           --platform=managed \
           --port=8000 \
