@@ -53,4 +53,5 @@ jobs:
           --allow-unauthenticated \
           --port=8000 \
           --min-instances=1 \
-          --max-instances=2
+          --max-instances=2 \
+          --set-env-vars DB_HOST=${{ secrets.DB_HOST }},DB_NAME=${{ secrets.DB_NAME }},DB_USER=${{ secrets.DB_USER }},DB_PASS=${{ secrets.DB_PASS }}
